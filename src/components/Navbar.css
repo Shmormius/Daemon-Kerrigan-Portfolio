@@ -1,0 +1,39 @@
+.navbar ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  background: #222;
+  color: #fff;
+  border-radius: 24px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+  background: #444;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+}
