@@ -11,7 +11,7 @@ export default function Home(): ReactElement {
     <div className="home-container">
       <Header subtitle="Home" />
       <div className="content-container">
-        <section className="left-info">
+        <section className="left-section">
           <Tiles></Tiles>
         </section>
         <section className="right-section">

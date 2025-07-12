@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import Glass from "../glass";
 import QualificationCard from "./qualification-card";
+import './Tiles.css';
 
 export default function Tiles(): ReactElement {
   return (
@@ -35,29 +36,28 @@ export default function Tiles(): ReactElement {
         </Glass>
         <Glass>
           <QualificationCard
-            title="Programming"
+            title="Web Development"
             items={[
-              "Java", 
-              "C", 
-              "C++", 
-              "Python", 
-              "Assembly", 
-              "algorithms",
-              "data structures"
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "React",
+              "JSON",
+              "REST APIs",
+              "Flast"
             ]}
           ></QualificationCard>
         </Glass>
         <Glass>
           <QualificationCard
-            title="Programming"
+            title="Agile Methodologies"
             items={[
-              "Java", 
-              "C", 
-              "C++", 
-              "Python", 
-              "Assembly", 
-              "algorithms",
-              "data structures"
+              "Git",
+              "GitHub Actions",
+              "CI/CD",
+              "Scrum",
+              "Jira",
+              "devops"
             ]}
           ></QualificationCard>
         </Glass>
