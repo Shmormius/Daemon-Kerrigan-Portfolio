@@ -35,7 +35,6 @@ body {
   display: flex;
   padding-top: 80px;
   justify-content: space-between;
-  min-height: 700px;
 }
 
 .left-section {
@@ -50,7 +49,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 50%;
 }
 
@@ -59,14 +57,30 @@ body {
   padding-top: 80px;
 }
 
-.signiture-container{
+.intro-container {
+  width: 95%;
+}
+
+.signature-container{
   display: flex;
   position: absolute;
   justify-content: center;
   align-items: center;
   width: 25%;
-  bottom: 25px;
+  bottom: 0px;
   right: 25%;
+}
+
+.featured-projects {
+  margin-top: 10px;
+  align-self: flex-start;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 1rem;
+  border-radius: 8px;
+  height: 50%;
 }
 
 .portrait-container {
@@ -74,21 +88,47 @@ body {
   position: absolute;
   justify-content: center;
   align-items: center;
-  width: 32%;
+  width: 25%;
   bottom: 0px;
   right: 0px;
   z-index: -1;
 }
 
 @media (max-width: 600px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
+  .content-container {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center align the stacked sections */
+    padding-top: 40px;
   }
-  .navbar ul {
-    flex-direction: column;
-    gap: 0.75rem;
+
+  .left-section,
+  .right-section {
     width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .featured-projects {
+    width: 90%;
+    margin-left: 0;
+    align-self: center;
+  }
+
+  .portrait-container {
+    width: 60%;
+    position: relative; /* Remove absolute positioning */
+    bottom: auto;
+    right: auto;
+    z-index: 1;
+    margin-bottom: 1rem;
+  }
+
+  .signature-container {
+    width: 60%;
+    position: relative; /* Remove absolute positioning */
+    bottom: auto;
+    right: auto;
+    margin-top: 0;
+    z-index: 1;
   }
 }

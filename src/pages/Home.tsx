@@ -1,9 +1,11 @@
 import React, { ReactElement, useMemo } from 'react';
 import Footer from '../components/Footer'
 import Header from '../components/Header'
-import Signiture from '../components/Home/Signiture';
+import Signature from '../components/Home/Signature';
 import Portrait from '../components/Home/Portrait';
-import Tiles from '../components/Home/tiles';
+import Tiles from '../components/Home/Tiles';
+import Intro from '../components/Home/Intro';
+import InfiniteCarousel from '../components/Home/InfiniteCarousel';
 import './Home.css';
 
 export default function Home(): ReactElement {
@@ -15,10 +17,18 @@ export default function Home(): ReactElement {
           <Tiles></Tiles>
         </section>
         <section className="right-section">
+          <Intro></Intro>
           <div className="featured-projects">
+          <InfiniteCarousel
+              items={[
+                { title: "Project 1", image: "image/placeholders/dove1.jpg" },
+                { title: "Project 2", image: "image/placeholders/dove2.jpg"},
+                { title: "Project 3", image: "image/placeholders/dove3.jpg" },
+              ]}
+            />
           </div>
           <Portrait></Portrait>
-          <Signiture></Signiture>
+          <Signature></Signature>
         </section>
       </div>
       <Footer></Footer>
