@@ -3,7 +3,7 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Signature from '../components/Home/Signature';
 import Portrait from '../components/Home/Portrait';
-import Tiles from '../components/Home/Tiles';
+import Tiles from '../components/Home/tiles';
 import Intro from '../components/Home/Intro';
 import InfiniteCarousel from '../components/Home/InfiniteCarousel';
 import './Home.css';
@@ -27,8 +27,10 @@ export default function Home(): ReactElement {
               ]}
             />
           </div>
-          <Portrait></Portrait>
-          <Signature></Signature>
+          <div className="portrait-signature-container">
+            <Portrait />
+            <Signature />
+          </div>
         </section>
       </div>
       <Footer></Footer>

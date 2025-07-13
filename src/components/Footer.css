@@ -1,8 +1,11 @@
 .footer{
-    text-align: center;
-    height: max-content;
-    position: absolute; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
     bottom: 0;
     width: 100%;
     min-height: 50px;
+    z-index: 1000;
 }

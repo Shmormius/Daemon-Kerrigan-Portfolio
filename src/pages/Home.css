@@ -35,6 +35,8 @@ body {
   display: flex;
   padding-top: 80px;
   justify-content: space-between;
+  height: 100%;
+  max-width: 2000px;
 }
 
 .left-section {
@@ -43,6 +45,10 @@ body {
   align-items: center;
   justify-content: center;
   width: 50%;
+}
+
+.box-container {
+  justify-items: center;
 }
 
 .right-section {
@@ -54,11 +60,12 @@ body {
 
 .content-container {
   display: flex;
-  padding-top: 80px;
+  padding-top: 100px;
 }
 
 .intro-container {
-  width: 95%;
+  width: 75%;
+  align-self: flex-start;
 }
 
 .signature-container{
@@ -69,6 +76,7 @@ body {
   width: 25%;
   bottom: 0px;
   right: 25%;
+  max-width: 400px;
 }
 
 .featured-projects {
@@ -92,13 +100,14 @@ body {
   bottom: 0px;
   right: 0px;
   z-index: -1;
+  max-width: 500px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
   .content-container {
-    flex-direction: column; /* Stack sections vertically */
-    align-items: center; /* Center align the stacked sections */
-    padding-top: 40px;
+    flex-direction: column; 
+    align-items: center;
+
   }
 
   .left-section,
@@ -115,20 +124,35 @@ body {
   }
 
   .portrait-container {
+    position: relative;
     width: 60%;
-    position: relative; /* Remove absolute positioning */
-    bottom: auto;
-    right: auto;
+    margin-bottom: 0;
     z-index: 1;
-    margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 
   .signature-container {
-    width: 60%;
-    position: relative; /* Remove absolute positioning */
-    bottom: auto;
-    right: auto;
-    margin-top: 0;
-    z-index: 1;
+    position: absolute;
+    width: 70%;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-left: -3rem;
+  }
+  .portrait-signature-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+  }
+  .intro-container {
+    width: 95%;
+    align-self: center;
   }
 }
