@@ -1,0 +1,49 @@
+.classlist-scroll-container {
+  max-height: 320px;
+  overflow-y: auto;
+  background:
+      linear-gradient(135deg, rgba(124, 113, 113, 0.65) 0%, rgba(200,200,255,0.45) 100%);
+  background-blend-mode: lighten, normal;
+  backdrop-filter: blur(18px) saturate(1.2);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 1rem;
+  margin: 1rem 0;
+  transition: background 0.2s;
+}
+
+.classlist-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.classlist-ul li {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 1rem;
+  color: #fff; 
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8); 
+}
+
+.classlist-ul li:last-child {
+  border-bottom: none;
+}
+
+.classlist-loading {
+  text-align: center;
+  color: #888;
+  padding: 0.75rem 0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+  .classlist-scroll-container {
+    max-height: 220px;
+    padding: 0.5rem;
+  }
+  .classlist-ul li {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.5rem;
+  }
+}

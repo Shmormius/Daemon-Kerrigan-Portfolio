@@ -7,14 +7,14 @@ type CarouselItem = {
 };
 
 interface InfiniteCarouselProps {
-  items: CarouselItem[];
+  projects: CarouselItem[];
 }
 
-const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({ items }) => {
+const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({ projects }) => {
   const [index, setIndex] = useState(0);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  const duplicatedItems = [...items, ...items, ...items]; // For infinite effect
+  const duplicatedItems = [...projects, ...projects, ...projects]; // For infinite effect
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,7 +26,7 @@ const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({ items }) => {
 
   useEffect(() => {
     if (wrapperRef.current) {
-      const total = items.length;
+      const total = projects.length;
       const scrollIndex = index % total;
 
       wrapperRef.current.style.transition = "transform 0.5s ease-in-out";
@@ -34,7 +34,7 @@ const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({ items }) => {
         scrollIndex * 100
       }%)`;
     }
-  }, [index, items.length]);
+  }, [index, projects.length]);
 
   return (
     <div className="carousel-container">
