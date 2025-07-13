@@ -23,6 +23,10 @@
     height: 70%;
 }
 
+h2{
+    margin-top: 0px;
+}
+
 @media screen and (max-width: 600px) {
     .box-container {
         grid-template-columns: 1fr;
@@ -46,5 +50,9 @@
         padding-left: 0rem;
         padding-top: 10px;
         box-sizing: border-box;
+    }
+    h2 {
+        font-size: 1.5rem;
+        margin-top: 5px;
     }
 }

@@ -1,12 +1,15 @@
 import { useParams } from 'react-router-dom';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default function ProjectDetail() {
   const { projectId } = useParams();
   // Fetch or look up project details using projectId
   return (
     <div>
-      <h1>Project: {projectId}</h1>
+      <Header subtitle={projectId} />
       {/* Render project details here */}
+      <Footer />
     </div>
   );
 }
