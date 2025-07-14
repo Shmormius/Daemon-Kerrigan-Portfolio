@@ -51,7 +51,6 @@ daemonkerrigan/
 
 ### Prerequisites
 - [Docker Desktop](https://www.docker.com/products/docker-desktop)
-- [Git](https://git-scm.com/)
 
 ### Development Setup
 
