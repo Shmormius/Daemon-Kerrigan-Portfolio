@@ -67,7 +67,7 @@ daemonkerrigan/
    - Frontend: [http://localhost:5173](http://localhost:5173)
    - Backend: [http://localhost:8000](http://localhost:8000)
 
-## 👨‍💻 Author
+## Author
 
 **Daemon Kerrigan**
 - Email: shmormius@gmail.com
