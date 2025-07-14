@@ -3,12 +3,20 @@ import './glass.css';
 
 interface GlassProps {
   children: ReactNode;
+  enableRainBackground?: boolean;
+  enableHoverEffect?: boolean;
 }
 
-export default function Glass({ children }: GlassProps): ReactElement {
+export default function Glass({ children, enableRainBackground = false, enableHoverEffect = false }: GlassProps): ReactElement {
+  const cardClasses = [
+    'card',
+    enableRainBackground && 'card-rain',
+    enableHoverEffect && 'card-hover'
+  ].filter(Boolean).join(' ');
+
   return (
     <div>
-        <div className="card">
+        <div className={cardClasses}>
             {children}
         </div>
     

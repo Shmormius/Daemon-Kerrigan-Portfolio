@@ -1,5 +1,6 @@
 import { ReactElement, useState } from "react";
 import { Link } from "react-router-dom";
+import { NAV_ITEMS } from "../../constants";
 import './Navbar.css';
 
 export default function Navbar(): ReactElement {
@@ -17,10 +18,11 @@ export default function Navbar(): ReactElement {
         <span />
       </button>
       <ul className={open ? "open" : ""} onClick={() => setOpen(false)}>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/projects">Projects</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
+        {NAV_ITEMS.map((item) => (
+          <li key={item.path}>
+            <Link to={item.path}>{item.label}</Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );

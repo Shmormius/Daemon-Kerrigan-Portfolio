@@ -5,7 +5,7 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import ProjectDetail from './pages/ProjectDetail';
-import './App.css'
+import './styles/App.css'; 
 
 export default function App(): ReactElement {
   return (

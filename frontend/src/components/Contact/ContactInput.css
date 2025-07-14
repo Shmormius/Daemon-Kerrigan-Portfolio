@@ -1,0 +1,82 @@
+.right-contact {
+  flex: 3;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-bottom: 100px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-contact .contact-form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right-contact .input-control {
+  margin: 1.5rem 0;
+}
+
+.right-contact .input-control #message {
+  height: 120px;
+}
+
+.right-contact .input-control input,
+.right-contact .input-control textarea {
+  border-radius: 30px;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0.8rem 1.1rem;
+  outline: none;
+  border: none;
+  background-color: var(--color-grey-5);
+  width: 100%;
+  color: var(--color-white);
+  resize: none;
+  box-sizing: border-box;
+}
+
+.right-contact .input-control input::placeholder,
+.right-contact .input-control textarea::placeholder {
+  color: var(--color-grey-2);
+}
+
+.right-contact .main-btn {
+  background:
+      linear-gradient(135deg, rgba(124, 113, 113, 0.65) 0%, rgba(200,200,255,0.45) 100%);
+    background-blend-mode: lighten, normal;
+    backdrop-filter: blur(18px) saturate(1.2);
+  color: var(--color-primary);
+  border: none;
+  border-radius: 30px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  width: auto;
+  align-self: flex-start;
+}
+
+.right-contact .main-btn span {
+  color: var(--color-white)
+}
+
+.right-contact .main-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+.right-contact .form-status {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  color: var(--color-white);
+  background-color: var(--color-grey-5);
+}

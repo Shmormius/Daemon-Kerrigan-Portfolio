@@ -1,4 +1,5 @@
 import { ReactNode } from "react"
+import "./ContactCard.css";
 
 export default function ContactCard(): ReactNode {
 
@@ -26,7 +27,7 @@ export default function ContactCard(): ReactNode {
                         <span>Email</span>
                     </div>
                     <p>
-                        <span>shmormius@gmail.com</span>
+                        shmormius@gmail.com
                     </p>
                 </div>
                 <div className="contact-item">
@@ -35,7 +36,7 @@ export default function ContactCard(): ReactNode {
                         <span>School</span>
                     </div>
                     <p>
-                        <span>Colorado State University</span>
+                        Colorado State University
                     </p>
                 </div>
 
@@ -45,7 +46,7 @@ export default function ContactCard(): ReactNode {
                         <span>Languages</span>
                     </div>
                     <p>
-                        <span>English, Japanese </span>
+                        English, Japanese
                     </p>
                 </div>
             </div>
