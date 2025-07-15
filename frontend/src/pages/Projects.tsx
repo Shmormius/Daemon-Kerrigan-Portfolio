@@ -32,7 +32,7 @@ const projects: Project[] = [
   },
   {
     id: "static-portfolio-website",
-    to: "/projects/Static-Portfolio-Website",
+    to: "/projects/static-portfolio-website",
     image: "image/project-thumbnail/javascript.png",
     title: "Static Portfolio Website",
     description: "Github Pages hosted portfolio website",
@@ -40,9 +40,9 @@ const projects: Project[] = [
   },
   {
     id: "consumer-producer-problem",
-    to: "/projects/Consumer-Producer-Problem",
+    to: "/projects/consumer-producer-problem",
     image: "image/project-thumbnail/consumer.png",
-    title: "Comsumer Producer Problem",
+    title: "Consumer Producer Problem",
     description: "The consumer producer problem implemented in Java",
     attributes: ["Java", "Threads", "Concurrency"]
   }

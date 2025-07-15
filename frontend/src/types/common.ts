@@ -9,9 +9,37 @@ export interface Project {
   to: string;
 }
 
+// Extended project detail types
+export interface ProjectDetailSection {
+  type: 'text' | 'image' | 'link' | 'video' | 'code';
+  content: string;
+  title?: string;
+  alt?: string; // for images
+  href?: string; // for links
+  language?: string; // for code blocks
+}
+
+export interface ProjectDetailContent {
+  left: ProjectDetailSection[];
+  right: ProjectDetailSection[];
+}
+
+export interface ProjectDetail {
+  id: string;
+  title: string;
+  subtitle?: string;
+  heroImage?: string;
+  overview: string;
+  technologies: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+  sections: ProjectDetailContent[];
+}
+
 export interface CarouselItem {
   title: string;
   image: string;
+  link?: string;
 }
 
 export interface ContactFormData {

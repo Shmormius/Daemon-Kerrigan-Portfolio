@@ -7,15 +7,12 @@ import Tiles from '../components/Home/Tiles';
 import Intro from '../components/Home/Intro';
 import InfiniteCarousel from '../components/Home/InfiniteCarousel';
 import { CarouselItem } from '../types';
+import { getFeaturedProjects, getRandomFeaturedProjects } from '../utils/projectUtils';
 import './styles/Home.css';
 
-const projects: CarouselItem[] = [
-  { title: "Project 1", image: "image/placeholders/dove1.jpg" },
-  { title: "Project 2", image: "image/placeholders/dove2.jpg"},
-  { title: "Project 3", image: "image/placeholders/dove3.jpg" }
-];
-
 export default function Home(): ReactElement {
+  const featuredProjects = useMemo(() => getRandomFeaturedProjects(3), []);
+
   return (
     <div className="home-container">
       <Header subtitle="Home" />
@@ -27,7 +24,7 @@ export default function Home(): ReactElement {
           <Intro></Intro>
           <div className="featured-projects">
           <InfiniteCarousel
-              projects={projects}
+              projects={featuredProjects}
             />
           </div>
           <div className="portrait-signature-container">

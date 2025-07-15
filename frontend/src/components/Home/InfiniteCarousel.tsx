@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { CarouselItem } from "../../types";
 import './InfiniteCarousel.css';
 
@@ -37,8 +38,17 @@ const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({ projects }) => {
       <div className="carousel-track" ref={wrapperRef}>
         {duplicatedItems.map((item, i) => (
           <div className="carousel-slide" key={i}>
-            <img src={item.image} alt={item.title} />
-            <p className="carousel-title">{item.title}</p>
+            {item.link ? (
+              <Link to={item.link} className="carousel-link">
+                <img src={item.image} alt={item.title} />
+                <p className="carousel-title">{item.title}</p>
+              </Link>
+            ) : (
+              <>
+                <img src={item.image} alt={item.title} />
+                <p className="carousel-title">{item.title}</p>
+              </>
+            )}
           </div>
         ))}
       </div>

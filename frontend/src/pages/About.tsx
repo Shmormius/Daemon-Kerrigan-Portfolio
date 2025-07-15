@@ -27,17 +27,17 @@ title: "Where Im From",
 
 const billgoTextBlockContent = {
   title: "BillGO | Fort Collins, CO | AI/ML Intern | May 2025 - August 2025",
-  text: ""
+  text: "At BillGO, I worked as an AI/ML intern tasked with leveraging AI and machine learning to improve, maintain, and develop new features for the company's products. In this position, I gained hands-on experience with AI solutions in the finacial technology sector using could technology such as AWS to delpoy and manage AI systems that integrate with existing software."
 };
 
 const registrarTextBlockContent = {
   title: "CSU Registrar's Office | Fort Collins, CO | Student Employee | June 2023 - May 2025",
-  text: ""
+  text: "For nearly my entire undergraduate career, I worked as a student employee at the CSU Registrar's Office. In this role, I represented the university and assisted students with various administrative tasks."
 };
 
 const ramshornTextBlockContent = {
   title: "Ram's Horn Dining Center | Fort Collins, CO | Student Employee | November 2021 - May 2023",
-  text: ""
+  text: "During my time at Ram's Horn Dining Center, I worked as a student employee, where I gained valuable experience in customer service and food preparation."
 };
 
 const educationTextBlockContent = {
