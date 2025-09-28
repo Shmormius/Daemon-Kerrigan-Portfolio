@@ -3,3 +3,9 @@
     padding-bottom: 100px;
 }
 
+@media screen and (max-width: 600px) {
+    .projects-content {
+        margin-top: 200px;
+    }
+}
+

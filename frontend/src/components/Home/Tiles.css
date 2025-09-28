@@ -33,7 +33,8 @@ h2{
         padding: 0;
         width: 100vw;
         margin-left: calc(-50vw + 50%);
-        gap: 0rem;;
+        gap: 0rem;
+        text-align: center;
     }
     
     .qualification-card {

@@ -1,12 +1,10 @@
 .project-detail-container {
   min-height: 100vh;
-  display: flex;
   flex-direction: column;
   margin-top: 100px;
 }
 
 .project-detail-content {
-  flex: 1;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;

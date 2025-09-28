@@ -6,6 +6,13 @@
     margin-top: 100px;
 }
 
-.left-right-section{
+.left-right-section {
     width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .contact-content {
+        padding: 1rem;
+        margin-top: 50px;
+    }
 }
