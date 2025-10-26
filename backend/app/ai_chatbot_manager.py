@@ -48,6 +48,9 @@ class BedrockChatbotManager:
             raise
     
     async def chat_with_agent(self, message: str, session_id: str = None) -> Dict[str, Any]:
+        """
+        Sends a chat message to the AI agent and returns the response.
+        """
         try:
             if not session_id:
                 import uuid

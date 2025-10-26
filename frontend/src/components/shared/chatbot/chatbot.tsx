@@ -54,6 +54,8 @@ export default function Chatbot(): ReactElement {
   const MAX_MESSAGE_LENGTH = 200;
   const MAX_MESSAGES_PER_WINDOW = 5;
   const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
+  const MIN_TOOLTIP_INTERVAL = 5000; // 5 seconds
+  const TOOLTIP_INTERVAL_VARIANCE = 3000; // up to 3 seconds
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -119,7 +121,7 @@ export default function Chatbot(): ReactElement {
 
     const recurringTimer = setInterval(() => {
       triggerShakeAndTooltip();
-    }, Math.random() * 3000 + 5000);
+    }, Math.random() * TOOLTIP_INTERVAL_VARIANCE + MIN_TOOLTIP_INTERVAL);
 
     return () => {
       clearTimeout(initialTimer);

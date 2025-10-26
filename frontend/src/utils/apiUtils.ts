@@ -59,14 +59,10 @@ export class ApiUtils {
     };
 
     try {
-      const apiResponse = await this.makeRequest<any>('/chat', {
+      const apiResponse = await this.makeRequest<ChatResponse>('/chat', {
         method: 'POST',
         body: JSON.stringify(requestBody),
       });
-
-      console.log('Raw API response:', apiResponse);
-      console.log('Response type:', typeof apiResponse);
-      console.log('Response keys:', Object.keys(apiResponse));
 
       if (apiResponse.response && typeof apiResponse.response === 'string') {
         return {
