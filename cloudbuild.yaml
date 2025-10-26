@@ -44,27 +44,37 @@ steps:
     id: 'deploy-backend'
     waitFor: ['push-backend']
 
-  # Get backend URL and build frontend with it
+  # Get backend URL and save it for frontend build
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'bash'
     args:
       - '-c'
       - |
-        # Get backend URL
         BACKEND_URL=$$(gcloud run services describe daemon-backend --region=us-central1 --format="value(status.url)")
-        echo "Building frontend with API URL: $$BACKEND_URL/api"
-        
-        # Move to frontend directory
-        cd frontend
+        echo "Backend URL: $$BACKEND_URL"
+        echo "VITE_API_BASE_URL=$$BACKEND_URL/api" > /workspace/frontend_env.txt
+        echo "Saved API URL: $$BACKEND_URL/api"
+    id: 'get-backend-url'
+    waitFor: ['deploy-backend']
+
+  # Build frontend with backend URL
+  - name: 'gcr.io/cloud-builders/docker'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        # Read the backend URL from the file
+        source /workspace/frontend_env.txt
+        echo "Building frontend with API URL: $$VITE_API_BASE_URL"
         
         # Build frontend with environment variable
         docker build \
-          --build-arg VITE_API_BASE_URL=$$BACKEND_URL/api \
+          --build-arg VITE_API_BASE_URL="$$VITE_API_BASE_URL" \
           -t gcr.io/$PROJECT_ID/daemon-frontend:$COMMIT_SHA \
           -t gcr.io/$PROJECT_ID/daemon-frontend:latest \
-          .
+          ./frontend
     id: 'build-frontend'
-    waitFor: ['deploy-backend']
+    waitFor: ['get-backend-url']
 
   # Push frontend image
   - name: 'gcr.io/cloud-builders/docker'
