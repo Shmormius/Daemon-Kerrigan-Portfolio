@@ -198,7 +198,17 @@ async def rate_limit_handler(request: Request, exc: RateLimitExceeded):
     
     response.headers["X-RateLimit-Limit"] = str(exc.detail.split("per")[0].strip())
     response.headers["X-RateLimit-Window"] = str(exc.detail.split("per")[1].strip())
-    response.headers["Retry-After"] = "60" 
+    window_str = exc.detail.split("per")[1].strip().lower()
+    window_seconds_map = {
+        "second": 1,
+        "minute": 60,
+        "hour": 3600,
+        "day": 86400
+    }
+
+    window_unit = window_str.rstrip('s')
+    retry_after = window_seconds_map.get(window_unit, 60)
+    response.headers["Retry-After"] = str(retry_after)
     
     client_ip = get_client_ip(request)
     logger.warning(f"Rate limit exceeded for {client_ip} on {request.url.path}: {exc.detail}")
