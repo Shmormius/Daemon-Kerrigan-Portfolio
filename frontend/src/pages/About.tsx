@@ -8,8 +8,8 @@ import LeftRightSection from "../components/shared/LeftRightSection";
 import ClassList from "../components/About/ClassList";
 import './styles/About.css';
 
-const pictureModelPath: string = "3d/aboutme.glb"; 
-const globeModelPath: string = "3d/worlds.glb"; 
+const pictureModelPath: string = "/3d/aboutme.glb"; 
+const globeModelPath: string = "/3d/worlds.glb"; 
 
 const billgoUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d660.0637721599442!2d-105.02269622363323!3d40.52266494945414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876eb34f9f53dceb%3A0x642b964884f7a666!2s3003%20E%20Harmony%20Rd%20%23500%2C%20Fort%20Collins%2C%20CO%2080528!5e0!3m2!1sen!2sus!4v1752382026249!5m2!1sen!2sus"
 const ramshornUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.6327789037246!2d-105.09610781069098!3d40.57178597249444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87694a4e23935157%3A0x2aa1323a7c5066be!2sRam's%20Horn%20Dining%20Center!5e0!3m2!1sen!2sus!4v1704701541764!5m2!1sen!2sus"
