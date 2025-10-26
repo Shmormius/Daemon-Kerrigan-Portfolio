@@ -3,7 +3,7 @@ services:
   backend-dev:
     build:
       context: ./backend
-      dockerfile: DockerFile
+      dockerfile: Dockerfile
     container_name: daemon_backend_dev
     ports:
       - "8000:8000"

@@ -94,10 +94,10 @@ export const NAV_ITEMS = [
 
 // Project categories/skills
 export const SKILLS = {
-  PROGRAMMING: ["Java", "C", "C++", "Python", "Assembly", "algorithms", "data structures"],
+  PROGRAMMING: ["Java", "C++", "Python", "algorithms", "data structures"],
   MACHINE_LEARNING: ["Neural Networks", "TensorFlow", "PyTorch", "Sklearn", "Pandas", "SVM", "Regression"],
-  WEB_DEVELOPMENT: ["HTML", "CSS", "JavaScript", "React", "JSON", "REST APIs", "Flask"],
-  AGILE: ["Git", "GitHub Actions", "CI/CD", "Scrum", "Jira", "devops"],
+  WEB_DEVELOPMENT: ["HTML", "CSS", "JavaScript", "React", "JSON", "REST APIs", "FastAPI"],
+  AGILE: ["Git", "GitHub Actions", "CI/CD", "Scrum", "Jira", "DevOps"],
 } as const;
 
 // Animation/transition timings

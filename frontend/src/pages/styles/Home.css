@@ -121,6 +121,15 @@ body {
     width: 90%;
     margin-left: 0;
     align-self: center;
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    padding: 1rem;
+    height: auto;
+    min-height: 250px; 
+  }
+  
+  .qualification-card h2 {
+    text-align: center;
   }
 
   .portrait-container {
