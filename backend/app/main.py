@@ -1,10 +1,11 @@
-from fastapi import FastAPI, HTTPException, Form
+from fastapi import FastAPI, HTTPException, Form, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from dotenv import load_dotenv
 import os
 import logging
 from typing import List, Dict, Any, Optional
+import time
 
 from .send_contact_manager import send_email
 from .ai_chatbot_manager import BedrockChatbotManager
@@ -21,10 +22,11 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://daemonkerrigan.com"
-    ] + (os.getenv("CORS_ORIGINS", "").split(",") if os.getenv("CORS_ORIGINS") else []),
+        "https://daemonkerrigan.com",
+        "https://daemon-frontend-xxx.us-central1.run.app"
+    ],
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
 
@@ -157,3 +159,18 @@ async def api_contact_options():
 @app.options("/api/chat")
 async def chat_options():
     return {"message": "OK"}
+
+request_counts = {}
+
+@app.middleware("http")
+async def rate_limit_middleware(request: Request, call_next):
+    client_ip = request.client.host
+    current_time = time.time()
+    
+    if client_ip in request_counts:
+        if current_time - request_counts[client_ip] < 1: 
+            raise HTTPException(status_code=429, detail="Rate limit exceeded")
+    
+    request_counts[client_ip] = current_time
+    response = await call_next(request)
+    return response
