@@ -1,8 +1,9 @@
-import smtplib
+import aiosmtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import ssl
 
-def send_email(sender_email, receiver_email, email_password, smtp_server, smtp_port, name, subject, message):
+async def send_email(sender_email, receiver_email, email_password, smtp_server, smtp_port, name, subject, message):
     """
     Sends an email using the provided SMTP server credentials and message details.
     Parameters:
@@ -28,9 +29,22 @@ def send_email(sender_email, receiver_email, email_password, smtp_server, smtp_p
     msg.attach(MIMEText(body, 'plain'))
 
     try:
-        with smtplib.SMTP(smtp_server, smtp_port) as server:
-            server.starttls()
-            server.login(sender_email, email_password)
-            server.sendmail(sender_email, receiver_email, msg.as_string())
+        # Create SSL context
+        context = ssl.create_default_context()
+        
+        # Connect to SMTP server with explicit timeout and SSL
+        smtp = aiosmtplib.SMTP(
+            hostname=smtp_server,
+            port=smtp_port,
+            timeout=30,
+            start_tls=True,
+            tls_context=context
+        )
+        
+        await smtp.connect()
+        await smtp.login(sender_email, email_password)
+        await smtp.send_message(msg)
+        await smtp.quit()
+        
     except Exception as e:
         raise Exception(f"Failed to send email: {e}")
