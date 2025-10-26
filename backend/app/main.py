@@ -48,7 +48,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "https://daemonkerrigan.com",
-        "https://daemon-frontend-930300202557.us-central1.run.app"  # Update with your actual URL
+        "https://daemon-frontend-930300202557.us-central1.run.app"
     ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "OPTIONS"],
