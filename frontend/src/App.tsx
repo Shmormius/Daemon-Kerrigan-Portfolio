@@ -6,6 +6,7 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import ProjectDetail from './pages/ProjectDetail';
 import './styles/App.css'; 
+import Chatbot from './components/shared/chatbot/chatbot';
 
 export default function App(): ReactElement {
   return (
@@ -21,6 +22,7 @@ export default function App(): ReactElement {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
+        <Chatbot />
       </div>
     </Router>
   );

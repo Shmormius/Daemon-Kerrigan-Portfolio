@@ -4,8 +4,10 @@ from pydantic import BaseModel
 from dotenv import load_dotenv
 import os
 import logging
+from typing import List, Dict, Any, Optional
 
 from .send_contact_manager import send_email
+from .ai_chatbot_manager import BedrockChatbotManager
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -23,10 +25,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Initialize Bedrock manager
+try:
+    bedrock_manager = BedrockChatbotManager()
+    logger.info("Bedrock manager initialized successfully")
+except Exception as e:
+    logger.error(f"Failed to initialize Bedrock manager: {e}")
+    bedrock_manager = None
+
 class ContactForm(BaseModel):
     name: str
     subject: str
     message: str
+
+class ChatMessage(BaseModel):
+    message: str
+    session_id: Optional[str] = None
 
 @app.get("/")
 async def read_root():
@@ -35,6 +49,40 @@ async def read_root():
 @app.get("/health")
 async def health_check():
     return {"status": "healthy"}
+
+@app.post("/api/chat")
+async def chat_with_ai(chat_request: ChatMessage):
+    """
+    Chat with the AI assistant using AWS Bedrock Agent
+    """
+    if not bedrock_manager:
+        raise HTTPException(status_code=500, detail="AI service is not available")
+    
+    try:
+        logger.info(f"Processing chat request: {chat_request.message[:50]}...")
+        
+        result = await bedrock_manager.chat_with_agent(
+            message=chat_request.message,
+            session_id=chat_request.session_id
+        )
+        
+        if result["success"]:
+            return {
+                "response": result["response"],
+                "session_id": result["session_id"]
+            }
+        else:
+            logger.error(f"Chat error: {result.get('error', 'Unknown error')}")
+            raise HTTPException(
+                status_code=500, 
+                detail=result.get("response", "AI service error")
+            )
+            
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Unexpected error in chat endpoint: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
 
 async def contact_form_handler(form: ContactForm):
     """Shared contact form logic"""
@@ -101,4 +149,8 @@ async def contact_options():
 
 @app.options("/api/contact")
 async def api_contact_options():
+    return {"message": "OK"}
+
+@app.options("/api/chat")
+async def chat_options():
     return {"message": "OK"}
