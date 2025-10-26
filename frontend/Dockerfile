@@ -4,14 +4,15 @@ FROM node:18-alpine AS build
 # Set working directory
 WORKDIR /app
 
+# Accept build argument
+ARG VITE_API_BASE_URL
+ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
+
 # Copy package files
 COPY package.json package-lock.json* ./
 
-# Install all dependencies including devDependencies
+# Install dependencies
 RUN npm ci --include=dev
-
-# Verify vite is installed
-RUN npx vite --version
 
 # Copy source code
 COPY . .
@@ -22,14 +23,11 @@ RUN npm run build
 # Production stage
 FROM nginx:alpine
 
-# Copy built assets from build stage
+# Copy built files
 COPY --from=build /app/dist /usr/share/nginx/html
 
 # Copy nginx configuration
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Expose port
 EXPOSE 80
-
-# Start nginx
 CMD ["nginx", "-g", "daemon off;"]
