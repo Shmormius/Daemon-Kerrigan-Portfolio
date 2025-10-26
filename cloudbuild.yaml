@@ -86,6 +86,9 @@ steps:
           --platform=managed \
           --allow-unauthenticated \
           --port=80 \
+          --memory=512Mi \
+          --cpu=1 \
+          --timeout=300 \
           --set-env-vars=VITE_API_BASE_URL=$$BACKEND_URL/api
     id: 'deploy-frontend'
     waitFor: ['push-frontend', 'get-backend-url']
