@@ -5,10 +5,13 @@ FROM node:18-alpine AS build
 WORKDIR /app
 
 # Copy package files
-COPY package*.json ./
+COPY package.json package-lock.json* ./
 
-# Install dependencies
-RUN npm ci --only=production
+# Install all dependencies including devDependencies
+RUN npm ci --include=dev
+
+# Verify vite is installed
+RUN npx vite --version
 
 # Copy source code
 COPY . .
@@ -23,7 +26,7 @@ FROM nginx:alpine
 COPY --from=build /app/dist /usr/share/nginx/html
 
 # Copy nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 
 # Expose port
 EXPOSE 80

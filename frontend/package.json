@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build": "vite build",
-    "dev": "vite",
-    "preview": "vite preview"
+    "build": "npx vite build",
+    "dev": "npx vite",
+    "preview": "npx vite preview"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
