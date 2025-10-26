@@ -2,8 +2,6 @@
 
 This project uses Docker to containerize both the frontend (React/Vite) and backend (Python/FastAPI) for easy deployment and development.
 
-## 🚀 Quick Start
-
 ### Prerequisites
 - Docker and Docker Compose installed
 - Git

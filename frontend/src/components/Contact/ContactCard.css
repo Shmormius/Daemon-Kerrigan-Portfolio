@@ -27,6 +27,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 1.2rem;
+  justify-content: flex-start; /* Align items to the left */
 }
 
 .contact-card-content .contact-item .icon {
@@ -50,12 +51,15 @@
 .contact-card-content .contact-icons {
   margin-top: 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Change from center to flex-start for left alignment */
+  width: 100%;
 }
 
 .contact-card-content .contact-icon {
   display: flex;
-  gap: 0.7rem;
+  gap: 1rem; /* Increase gap between icons */
+  flex-wrap: nowrap; /* Prevent wrapping */
+  align-items: center;
 }
 
 .contact-card-content .contact-icon a {
@@ -73,6 +77,7 @@
   transition: all 0.3s;
   font-size: 1.3rem;
   text-decoration: none;
+  flex-shrink: 0; /* Prevent icons from shrinking */
 }
 
 .contact-card-content .contact-icon a:hover {
@@ -82,4 +87,60 @@
 
 span {
   color: var(--color-primary);
+}
+
+/* Mobile styles */
+@media screen and (max-width: 600px) {
+  .contact-card-content {
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+   
+  .contact-card-content h4 {
+    font-size: 1.5rem;
+  }
+  
+  .contact-card-content p {
+    font-size: 0.9rem;
+  }
+  
+  .contact-card-content .contact-item {
+    min-width: auto;
+    margin-bottom: 0.5rem;
+    justify-content: flex-start;
+    display: block;
+  }
+  
+  .contact-card-content .contact-item .icon {
+    min-width: auto;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .contact-card-content .contact-icons {
+    margin-top: 1.5rem;
+    justify-content: center; /* Center icons on mobile */
+  }
+  
+  .contact-card-content .contact-icon {
+    gap: 0.8rem; /* Slightly smaller gap on mobile */
+    flex-wrap: wrap; /* Allow wrapping on very small screens */
+    justify-content: center;
+    max-width: 100%;
+  }
+  
+  /* For very small screens, ensure icons don't overflow */
+  @media screen and (max-width: 400px) {
+    .contact-card-content .contact-icon {
+      gap: 0.5rem;
+    }
+    
+    .contact-card-content .contact-icon a {
+      width: 40px;
+      height: 40px;
+      font-size: 1.1rem;
+    }
+  }
 }

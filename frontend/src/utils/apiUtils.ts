@@ -1,17 +1,26 @@
-import { ApiResponse, ApiError, ContactFormSubmission } from '../types';
+import {ApiError, ContactFormSubmission } from '../types';
+
+interface ChatRequest {
+  message: string;
+  session_id?: string;
+}
+
+interface ChatResponse {
+  success: boolean;
+  response: string;
+  session_id: string;
+  error?: string;
+}
 
 // API utility functions
 export class ApiUtils {
   private static readonly BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api';
-  private static readonly DEFAULT_TIMEOUT = 10000; // 10 seconds
+  private static readonly DEFAULT_TIMEOUT = 30000; // 30 seconds
 
-  /**
-   * Creates a standardized API request
-   */
   static async makeRequest<T>(
     endpoint: string,
     options: RequestInit = {}
-  ): Promise<ApiResponse<T>> {
+  ): Promise<T> {
     const url = `${this.BASE_URL}${endpoint}`;
     const config: RequestInit = {
       headers: {
@@ -43,9 +52,38 @@ export class ApiUtils {
     }
   }
 
-  /**
-   * Handles API errors consistently
-   */
+  static async sendChatMessage(message: string, sessionId?: string): Promise<ChatResponse> {
+    const requestBody: ChatRequest = {
+      message,
+      ...(sessionId && { session_id: sessionId })
+    };
+
+    try {
+      const apiResponse = await this.makeRequest<ChatResponse>('/chat', {
+        method: 'POST',
+        body: JSON.stringify(requestBody),
+      });
+
+      if (apiResponse.response && typeof apiResponse.response === 'string') {
+        return {
+          success: true,
+          response: apiResponse.response,
+          session_id: apiResponse.session_id || sessionId || '',
+          error: undefined
+        };
+      } else if (apiResponse.error) {
+        throw new Error(apiResponse.error);
+      } else {
+        console.error('Unexpected response format:', apiResponse);
+        throw new Error('Unexpected response format from server');
+      }
+
+    } catch (error) {
+      console.error('Chat API error:', error);
+      throw error;
+    }
+  }
+
   static handleApiError(error: unknown): ApiError {
     if (error instanceof Error) {
       return {
@@ -62,9 +100,6 @@ export class ApiUtils {
     };
   }
 
-  /**
-   * Validates form data before submission
-   */
   static validateContactForm(data: ContactFormSubmission): string[] {
     const errors: string[] = [];
     
@@ -87,16 +122,10 @@ export class ApiUtils {
     return errors;
   }
 
-  /**
-   * Formats date for API responses
-   */
   static formatTimestamp(date: Date = new Date()): string {
     return date.toISOString();
   }
 
-  /**
-   * Debounces function calls (useful for search, form validation)
-   */
   static debounce<T extends (...args: unknown[]) => unknown>(
     func: T,
     delay: number

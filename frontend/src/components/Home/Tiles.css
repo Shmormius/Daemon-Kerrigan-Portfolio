@@ -7,52 +7,93 @@
   padding-bottom: 20px;
 }
 
+.single-tile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 400px;
+}
+
+.tile-wrapper {
+  width: 100%;
+  max-width: 500px;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.tile-wrapper.visible {
+  opacity: 1;
+}
+
+.tile-wrapper.hidden {
+  opacity: 0;
+}
+
 .qualification-card {
-  padding: 1rem;
+  padding: 2rem;
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   aspect-ratio: 1 / 1;
   min-width: 0;
   min-height: 0;
+  width: 100%;
 }
 
-.card{
-    height: 70%;
+.card {
+  height: 70%;
+  width: 100%;
 }
 
-h2{
-    margin-top: 0px;
+.qualification-card h2 {
+  font-size: 3rem;
+  margin-top: 0px;
+}
+
+.qualification-card p {
+    font-size: 2rem;
+    margin-top: 10px;
+    text-align: center;
 }
 
 @media screen and (max-width: 600px) {
-    .box-container {
-        grid-template-columns: 1fr;
-        padding: 0;
-        width: 100vw;
-        margin-left: calc(-50vw + 50%);
-        gap: 0rem;;
-    }
-    
-    .qualification-card {
-        margin-bottom: 0rem;
-        justify-content: normal;
-        aspect-ratio: 1 / .5;
-        width: 90vw;
-        max-width: 100vw;
-    }
+  .box-container {
+    grid-template-columns: 1fr;
+    padding: 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    gap: 0rem;
+    text-align: center;
+  }
+  
+  .single-tile-container {
+    padding: 1rem;
+    min-height: 300px;
+  }
+  
+  .tile-wrapper {
+    max-width: 90vw;
+  }
+  
+  .qualification-card {
+    aspect-ratio: 1 / 0.8;
+    padding: 1rem;
+  }
+  
+  .card {
+    padding-left: 0rem;
+    padding-top: 10px;
+    box-sizing: border-box;
+  }
+  
+  .qualification-card h2 {
+    font-size: 3rem;
+    margin-top: 5px;
+  }
 
-    .card {
-        width: 95vw;
-        max-width: 100vw;
-        padding-left: 0rem;
-        padding-top: 10px;
-        box-sizing: border-box;
-    }
-    h2 {
-        font-size: 1.5rem;
-        margin-top: 5px;
-    }
+  .qualification-card p {
+    font-size: 2rem;
+    margin-top: 5px;
+  }
 }

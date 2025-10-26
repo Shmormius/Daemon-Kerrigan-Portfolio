@@ -26,8 +26,8 @@ title: "Where Im From",
 };
 
 const billgoTextBlockContent = {
-  title: "BillGO | Fort Collins, CO | AI/ML Intern | May 2025 - August 2025",
-  text: "At BillGO, I worked as an AI/ML intern tasked with leveraging AI and machine learning to improve, maintain, and develop new features for the company's products. In this position, I gained hands-on experience with AI solutions in the finacial technology sector using could technology such as AWS to delpoy and manage AI systems that integrate with existing software."
+  title: "BillGO | Fort Collins, CO | AI/ML Intern | May 2025 - December 2025",
+  text: "At BillGO, I worked as an AI/ML intern tasked with leveraging AI and machine learning to improve, maintain, and develop new features for the company's products. In this position, I gained hands-on experience with AI solutions in the financial technology sector using cloud technology such as AWS to deploy and manage AI systems that integrate with existing software."
 };
 
 const registrarTextBlockContent = {

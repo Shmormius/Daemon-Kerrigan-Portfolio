@@ -80,3 +80,41 @@
   color: var(--color-white);
   background-color: var(--color-grey-5);
 }
+
+/* Mobile styles */
+@media screen and (max-width: 600px) {
+  .right-contact {
+    margin: 0;
+    margin-bottom: 2rem;
+    width: 100%;
+    flex: 1;
+  }
+  
+  .right-contact .contact-form {
+    width: 100%;
+    padding: 0;
+  }
+  
+  .right-contact .input-control {
+    margin: 1rem 0;
+    width: 100%;
+  }
+  
+  .right-contact .input-control input,
+  .right-contact .input-control textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  
+  .right-contact .input-control #message {
+    height: 100px;
+  }
+  
+  .right-contact .main-btn {
+    width: 100%;
+    align-self: stretch;
+    text-align: center;
+    padding: 1.2rem;
+  }
+}
