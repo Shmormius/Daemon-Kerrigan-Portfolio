@@ -45,7 +45,7 @@ steps:
     waitFor: ['push-backend']
 
   # Get backend URL and build frontend with it
-  - name: 'gcr.io/cloud-builders/docker'
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'bash'
     args:
       - '-c'
