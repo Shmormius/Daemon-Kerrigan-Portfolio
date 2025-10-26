@@ -54,9 +54,8 @@ steps:
         BACKEND_URL=$$(gcloud run services describe daemon-backend --region=us-central1 --format="value(status.url)")
         echo "Building frontend with API URL: $$BACKEND_URL/api"
         
-        # Create .env.production file for Vite
+        # Move to frontend directory
         cd frontend
-        echo "VITE_API_BASE_URL=$$BACKEND_URL/api" > .env.production
         
         # Build frontend with environment variable
         docker build \
