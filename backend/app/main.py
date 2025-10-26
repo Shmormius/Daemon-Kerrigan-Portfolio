@@ -114,7 +114,7 @@ async def contact_form_handler(form: ContactForm):
 
         logger.info("Attempting to send email...")
         
-        send_email(
+        await send_email(
             sender_email,
             receiver_email,
             email_password,
