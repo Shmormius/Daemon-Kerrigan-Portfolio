@@ -79,6 +79,7 @@
   .qualification-card {
     aspect-ratio: 1 / 0.8;
     padding: 1rem;
+    padding-bottom: 50px;
   }
   
   .card {

@@ -54,10 +54,10 @@ export default function Home(): ReactElement {
         <section className="left-section" ref={leftSectionRef}>
           <Intro></Intro>
           <div className="featured-projects">
-          <InfiniteCarousel
-              projects={featuredProjects}
-            />
-          </div>
+            <InfiniteCarousel
+                projects={featuredProjects}
+              />
+            </div>
           <div className="portrait-signature-container" ref={portraitContainerRef}>
             <Portrait />
             <Signature />

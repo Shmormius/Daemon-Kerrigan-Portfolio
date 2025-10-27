@@ -54,3 +54,33 @@
   font-weight: 600;
   text-align: center;
 }
+
+@media (max-width: 1200px) {
+  .carousel-container {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .carousel-slide {
+    padding: 0.25rem; /* Reduce padding */
+    justify-content: flex-start; /* Align to top instead of center */
+  }
+  
+  .carousel-slide img {
+    height: auto; /* Let image size naturally */
+    max-height: 200px; /* Set a reasonable max height for mobile */
+    width: 90%; /* Make image smaller on mobile */
+    margin-bottom: 0.25rem; /* Reduce space below image */
+  }
+  
+  .carousel-title {
+    margin-top: 0.25rem; /* Reduce space above title */
+    font-size: 0.9rem; /* Slightly smaller text on mobile */
+    line-height: 1.2;
+  }
+  
+  .carousel-link {
+    justify-content: flex-start; /* Align content to top */
+    padding: 0.5rem; /* Add some padding to the link */
+  }
+}

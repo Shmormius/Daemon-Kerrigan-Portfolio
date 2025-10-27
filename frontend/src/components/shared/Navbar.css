@@ -87,7 +87,7 @@
     width: 100%;
   }
   .navbar ul li a {
-    width: 100%;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
