@@ -1,0 +1,330 @@
+.ranking-content-con {
+  padding: 20px;
+  background-color: transparent;
+}
+
+.ranking-content-con .anime {
+  display: flex;
+  min-height: 200px;
+  margin-bottom: 15px;
+  border: 3px solid var(--color-grey-1);
+  padding: 15px;
+  border-radius: 5px;
+  transition: all 0.4s ease-in-out;
+}
+
+.ranking-content-con .anime:hover {
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  transition: all 0.4s ease-in-out;
+}
+
+#jjba {
+  background: linear-gradient(
+    to right,
+    rgba(134, 10, 134, 0.411) 30%,
+    rgba(176, 0, 230, 0.253) 60%,
+    rgba(255, 0, 0, 0) 100%
+  ), url('/image/blog-thumbnail/madeinheaven.jpg') !important;
+  background-size: cover !important;
+}
+
+#jjba .right-anime .details .title p {
+  color: rgb(255, 255, 255);
+}
+#jjba .right-anime .star-rating {
+  color: rgb(190, 83, 162);
+}
+#jjba .right-anime .duration p {
+  color: white;
+}
+
+#akira {
+  background: linear-gradient(
+    to right,
+    rgb(0, 0, 0) 30%,
+    rgba(0, 0, 0, 0.5) 60%,
+    rgba(255, 0, 0, 0) 100%
+  ), url('/image/anime-covers/akira-back.jpg') !important;
+  background-size: cover !important;
+}
+
+#akira .right-anime .details .title p {
+  color: rgb(255, 255, 255);
+}
+#akira .right-anime .star-rating {
+  color: rgb(236, 65, 65);
+}
+#akira .right-anime .duration p {
+  color: white;
+}
+
+#mob {
+  background: linear-gradient(
+    to right,
+    rgba(99, 3, 209, 0.438) 30%,
+    rgba(15, 130, 138, 0.5) 60%,
+    rgba(255, 0, 0, 0) 100%
+  ), url('/image/anime-covers/mob_back.jpg') !important;
+  background-size: cover !important;
+}
+
+#mob .right-anime .details .title p {
+  color: rgb(170, 238, 255);
+}
+#mob .right-anime .star-rating {
+  color: rgb(202, 42, 175);
+}
+#mob .right-anime .duration p {
+  color: white;
+}
+
+#eva {
+  background: linear-gradient(
+    to right,
+    rgba(103, 23, 23, 0.349) 30%,
+    rgba(32, 26, 115, 0.5) 60%,
+    rgba(255, 0, 0, 0) 100%
+  ), url('/image/anime-covers/eva2.jpg') !important;
+  background-size: cover !important;
+}
+
+#eva .right-anime .details .title p {
+  color: rgb(255, 255, 255);
+}
+#eva .right-anime .star-rating {
+  color: rgb(235, 236, 249);
+}
+#eva .right-anime .duration p {
+  color: white;
+}
+
+#reze {
+  background: linear-gradient(
+    to right,
+    rgba(255, 225, 126, 0.425) 30%,
+    rgba(255, 0, 0, 0) 100%
+  ), url('/image/anime-covers/chainsaw-man-the-movie-reze-arc-opening-movie.png') !important;
+  background-size: cover !important;
+}
+
+#reze .right-anime .details .title p {
+  color: rgb(240, 227, 227);
+}
+#reze .right-anime .star-rating {
+  color: rgb(235, 219, 219);
+}
+#reze .right-anime .duration p {
+  color: rgb(228, 216, 216);
+}
+
+#meshi {
+  background: linear-gradient(
+    to right,
+    rgb(33, 32, 103) 30%,
+    rgba(32, 26, 115, 0.5) 60%,
+    rgba(255, 0, 0, 0) 100%
+  ), url('/image/anime-covers/meshi-back.jpg') !important;
+  background-size: cover !important;
+}
+
+#meshi .right-anime .details .title p {
+  color: rgb(218, 222, 255);
+}
+#meshi .right-anime .star-rating {
+  color: rgb(62, 81, 152);
+}
+#meshi .right-anime .duration p {
+  color: rgb(92, 134, 138);
+}
+
+#look_back {
+  background: linear-gradient(
+    to right,
+    rgb(33, 136, 47) 30%,
+    rgba(42, 141, 148, 0.5) 60%,
+    rgba(255, 0, 0, 0) 100%
+  ), url('/image/anime-covers/look-back.png') !important;
+  background-size: cover !important;
+}
+
+#look_back .right-anime .details .title p {
+  color: rgb(255, 255, 255);
+}
+#look_back .right-anime .star-rating {
+  color: rgb(255, 255, 255);
+}
+#look_back .right-anime .duration p {
+  color: rgb(255, 255, 255);
+}
+
+#nge {
+  background: linear-gradient(
+    to right,
+    rgba(52, 9, 94, 0.63) 30%,
+    rgba(84, 255, 42, 0.5) 60%,
+    rgba(255, 0, 0, 0) 100%
+  ), url('/image/anime-covers/nge.png') !important;
+  background-size: cover !important;
+}
+
+#nge .right-anime .details .title p {
+  color: rgb(255, 231, 163);
+}
+#nge .right-anime .star-rating {
+  color: rgb(246, 234, 192);
+}
+#nge .right-anime .duration p {
+  color: rgb(177, 197, 200);
+}
+
+#cowboy {
+  background: linear-gradient(
+    to right,
+    rgba(9, 55, 116, 0.548) 30%,
+    rgba(67, 151, 247, 0.5) 60%,
+    rgba(255, 0, 0, 0) 100%
+  ), url('/image/anime-covers/cowboy-back.jpg') !important;
+  background-size: cover !important;
+}
+
+#cowboy .right-anime .details .title p {
+  color: rgb(255, 255, 255);
+}
+#cowboy .right-anime .star-rating {
+  color: rgb(245, 225, 226);
+}
+#cowboy .right-anime .duration p {
+  color: rgb(255, 239, 239);
+}
+
+#lain {
+  background: linear-gradient(
+    to right,
+    rgb(6, 41, 2) 30%,
+    rgba(67, 247, 91, 0.5) 60%,
+    rgba(255, 0, 0, 0) 100%
+  ), url('/image/anime-covers/laincover.png') !important;
+  background-size: cover !important;
+}
+
+#lain .right-anime .details .title p {
+  color: var(--color-white);
+}
+#lain .right-anime .star-rating {
+  color: var(--color-white);
+}
+#lain .right-anime .duration p {
+  color: var(--color-white);
+}
+
+.ranking-content-con .anime .left-anime {
+  display: flex;
+  align-items: center;
+}
+
+.ranking-content-con .anime .left-anime p {
+  padding: 25px;
+  padding-left: 0px;
+  font-size: 34px;
+  color: var(--color-white);
+  font-weight: bold;
+  margin: 0;
+  min-width: 60px;
+  text-align: center;
+}
+
+.ranking-content-con .anime .right-anime {
+  display: flex;
+  flex: 1;
+}
+
+.ranking-content-con .anime .right-anime .details {
+  min-width: 200px;
+  margin-left: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ranking-content-con .anime .right-anime .details .title p {
+  color: var(--color-primary);
+  font-size: 34px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.ranking-content-con .anime .left-anime .anime-cover {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.ranking-content-con .anime .right-anime .star-rating {
+  font-size: 28px;
+  color: var(--color-primary);
+  display: flex;
+  gap: 0.2rem;
+}
+
+.ranking-content-con .anime .right-anime .duration p {
+  color: var(--color-grey-1);
+  margin: 0;
+  font-size: 1rem;
+}
+
+.ranking-content-con .anime .left-anime .anime-cover:hover {
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  transition: all 0.4s ease-in-out;
+}
+
+@media only screen and (max-width: 767px) {
+  .ranking-content-con {
+    margin-left: 0%;
+    padding: 10px;
+  }
+
+  .ranking-content-con .anime {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .ranking-content-con .anime .left-anime {
+    gap: 10px;
+  }
+
+  .ranking-content-con .anime .left-anime p {
+    padding: 0;
+    padding-right: 10px;
+    font-size: 24px;
+    min-width: 40px;
+  }
+
+  .ranking-content-con .anime .left-anime .anime-cover {
+    width: 80px;
+    min-width: 80px;
+    height: auto;
+  }
+
+  .ranking-content-con .right-anime {
+    padding-right: 10px;
+  }
+  
+  .ranking-content-con .anime .right-anime .details {
+    margin-left: 10px;
+  }
+  
+  .ranking-content-con .anime .right-anime .details .title p {
+    font-size: 18px;
+  }
+  
+  .ranking-content-con .anime .right-anime .star-rating {
+    font-size: 16px;
+  }
+  
+  .ranking-content-con .anime .right-anime .duration p {
+    font-size: 0.9rem;
+  }
+}

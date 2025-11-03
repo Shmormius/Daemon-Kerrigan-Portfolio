@@ -39,7 +39,7 @@ const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({ projects }) => {
         {duplicatedItems.map((item, i) => (
           <div className="carousel-slide" key={i}>
             {item.link ? (
-              <Link to={item.link} className="carousel-link">
+              <Link to={""} className="carousel-link">
                 <img src={item.image} alt={item.title} />
                 <p className="carousel-title">{item.title}</p>
               </Link>

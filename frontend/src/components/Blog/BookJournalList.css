@@ -1,0 +1,127 @@
+.journal-content-con {
+  width: 100%;
+  background-color: transparent;
+  border-radius: 30px;
+}
+
+.journal-content-con .book {
+  display: flex;
+  width: 97%;
+  min-height: 300px;
+  margin-bottom: 25px;
+  padding: 15px;
+  transition: all 0.4s ease-in-out;
+}
+
+.journal-content-con .book:hover {
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  transition: all 0.4s ease-in-out;
+}
+
+.journal-content-con .book .left-book {
+  display: flex;
+  gap: 15px;
+}
+
+.journal-content-con .book .left-book .details {
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.journal-content-con .book .left-book .details .title p {
+  color: var(--color-black);
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.journal-content-con .book .left-book .details .author p {
+  color: var(--color-black);
+  font-size: 24px;
+  font-style: italic;
+  margin: 0;
+}
+
+.journal-content-con .book .left-book .details .star-rating {
+  display: flex;
+  gap: 0.2rem;
+  font-size: 18px;
+  color: #FFD700;
+}
+
+.journal-content-con .book .left-book .details .page-count p,
+.journal-content-con .book .left-book .details .genre p,
+.journal-content-con .book .left-book .details .date-read p {
+  color: var(--color-black);
+  font-size: 20px;
+  margin: 0;
+}
+
+.journal-content-con .book .left-book .book-cover {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease-in-out;
+  object-fit: cover;
+  max-height: 300px; 
+}
+
+.journal-content-con .book .left-book .book-cover:hover {
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  transition: all 0.4s ease-in-out;
+}
+
+.journal-content-con .book .right-book {
+  flex: 1;
+  margin-left: 20px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.journal-content-con .book .right-book p {
+  font-family: "Caveat", serif;
+  color: var(--color-black);
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  .journal-content-con {
+    width: 100%;
+  }
+
+  .journal-content-con .book {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .journal-content-con .book .left-book {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .journal-content-con .book .left-book .book-cover {
+    width: 120px;
+    min-width: 120px;
+    height: 180px; 
+    object-fit: cover;
+    max-height: 180px; 
+  }
+
+  .journal-content-con .book .left-book .details {
+    flex: 1;
+  }
+
+  .journal-content-con .book .right-book p {
+    font-size: 14px;  
+  }
+}

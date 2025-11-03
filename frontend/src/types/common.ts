@@ -9,14 +9,13 @@ export interface Project {
   to: string;
 }
 
-// Extended project detail types
 export interface ProjectDetailSection {
   type: 'text' | 'image' | 'link' | 'video' | 'code';
   content: string;
   title?: string;
-  alt?: string; // for images
-  href?: string; // for links
-  language?: string; // for code blocks
+  alt?: string;
+  href?: string;
+  language?: string;
 }
 
 export interface ProjectDetailContent {
@@ -34,6 +33,14 @@ export interface ProjectDetail {
   githubUrl?: string;
   liveUrl?: string;
   sections: ProjectDetailContent[];
+}
+
+export interface BlogPost {
+  to: string;
+  image: string;
+  title: string;
+  description: string;
+  date: string;
 }
 
 export interface CarouselItem {
@@ -100,4 +107,25 @@ export interface MapLocation {
     lat: number;
     lng: number;
   };
+}
+
+export interface BlogDetailSection {
+  type: 'text' | 'image' | 'list' | 'quote' | 'gallery' | 'embed' | 'custom';
+  content?: string | string[];
+  title?: string;
+  subtitle?: string;
+  alt?: string;
+  className?: string;
+  metadata?: Record<string, any>;
+  component?: string;
+  data?: any;
+}
+
+export interface BlogDetail {
+  id: string;
+  title: string;
+  subtitle?: string;
+  excerpt: string;
+  customCss?: string; 
+  sections: BlogDetailSection[];
 }

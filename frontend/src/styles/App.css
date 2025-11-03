@@ -6,3 +6,7 @@ p, h1, h2 {
   color: #fff; 
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8); 
 }
+
+.house {
+  color: var(--color-house);
+}

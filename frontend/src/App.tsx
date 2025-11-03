@@ -2,11 +2,13 @@ import { ReactElement } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
+import Blog from './pages/Blog';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import ProjectDetail from './pages/ProjectDetail';
 import './styles/App.css'; 
 import Chatbot from './components/shared/chatbot/chatbot';
+import BlogDetail from './pages/BlogDetail';
 
 export default function App(): ReactElement {
   return (
@@ -17,6 +19,8 @@ export default function App(): ReactElement {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:postId" element={<BlogDetail />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:projectId" element={<ProjectDetail />} />
             <Route path="/contact" element={<Contact />} />
