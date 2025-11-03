@@ -1,0 +1,67 @@
+/* Custom styles for book journal */
+.book-list li {
+  background: rgba(139, 69, 19, 0.2);
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  border-left: 3px solid #8B4513;
+}
+
+.featured-quote {
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.3), rgba(160, 82, 45, 0.2));
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.blog-detail-container {
+  background: 
+    linear-gradient(to bottom right, var(--color-primary), var(--color-secondary), var(--color-tertiary)),
+    url('/image/book-journal/leather.jpg');
+  
+  background-size: auto, 300px 300px;
+  background-repeat: no-repeat, repeat;
+  
+  background-blend-mode: multiply;
+  
+  margin: 0;
+}
+
+.blog-content {
+  width: 75%;
+  padding-top: 3.5rem;
+  padding: 20px;
+  margin-left: 10%;
+  min-height: 1000px;
+  margin-bottom: 10rem;
+  border-radius: 0px;
+  background: url('/image/book-journal/paper.jpg') repeat-y;
+  background-size: 100% auto;
+  filter: brightness(0.8);
+  
+}
+
+.blog-section.intro-section {
+  padding-left: 150px;
+}
+
+.blog-section p {
+  font-family: "Caveat", serif;
+  color: var(--color-black);
+  font-size: 20px;
+  text-shadow: none;
+}
+
+.blog-section h3 {
+  color: var(--color-black);
+}
+
+@media only screen and (max-width: 767px) {
+  .blog-section.intro-section {
+    padding-left: 0;
+  }
+
+  .blog-content {
+    width: inherit;
+    margin-left: 0;
+  }
+}

@@ -53,11 +53,8 @@ export default function Projects(): ReactElement {
     <div className="Project-container">
       <Header subtitle="Projects"/>
       <div className="projects-content">
-        <div className="projects-grid">
-          {projects.map((proj, idx) => (
-            <ProjectTile key={idx} {...proj} />
-          ))}
-        </div>
+        <p>Coming Soon...</p>
+        <img src="/image/placeholders/jackhanmer-construction-worker.gif" alt="Coming Soon" />
       </div>
       <Footer />
     </div>

@@ -1,0 +1,11 @@
+/* Custom styles for anime ranking page */
+.blog-section.anime-rankings {
+  background: transparent;
+  padding: 0;
+}
+
+.blog-section.anime-rankings h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #FFD700;
+}

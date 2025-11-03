@@ -1,0 +1,10 @@
+.blog-elements{
+    margin-top: 100px;
+    padding-bottom: 100px;
+}
+
+@media screen and (max-width: 600px) {
+    .blog-elements {
+        margin-top: 200px;
+    }
+}
