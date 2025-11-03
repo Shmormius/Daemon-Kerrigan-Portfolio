@@ -89,7 +89,7 @@ export const bookJournalData: BookItem[] = [
     review: ""
   },
   {
-    id: "house-of-leaves",
+    id: "stoner",
     title: "Stoner",
     author: "John Williams",
     cover: "/image/book-journal/stoner.jpg",
