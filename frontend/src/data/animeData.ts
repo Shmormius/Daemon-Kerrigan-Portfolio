@@ -154,6 +154,13 @@ export const animeRankingData: AnimeItem[] = [
     duration: 13
   },
   {
+    id: "nhk",
+    title: "Welcome to the N.H.K",
+    cover: "/image/anime-covers/nhk.jpg",
+    rating: 7,
+    duration: 24
+  },
+  {
     id: "flowers",
     title: "Flowers of Evil",
     cover: "/image/anime-covers/flowers-of-evil.jpg",
@@ -182,11 +189,11 @@ export const animeRankingData: AnimeItem[] = [
     duration: 12
   },
   {
-    id: "nhk",
-    title: "Welcome to the N.H.K",
-    cover: "/image/anime-covers/nhk.jpg",
+    id: "hikaru",
+    title: "The Summer Hikaru Died",
+    cover: "/image/anime-covers/hikaru.jpg",
     rating: 7,
-    duration: 24
+    duration: 12
   },
   {
     id: "vinland",
