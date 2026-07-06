@@ -91,11 +91,11 @@ export const animeRankingData: AnimeItem[] = [
     backgroundImage: "/image/anime-covers/cowboy-back.jpg"
   },
   {
-    id: "dandadan",
-    title: "Dandadan",
-    cover: "/image/anime-covers/ddd.png",
+    id: "deathnote",
+    title: "Death note",
+    cover: "/image/anime-covers/deathnote.jpg",
     rating: 9,
-    duration: 12
+    duration: 37
   },
   {
     id: "aot",
@@ -105,17 +105,17 @@ export const animeRankingData: AnimeItem[] = [
     duration: 94
   },
   {
-    id: "deathnote",
-    title: "Death note",
-    cover: "/image/anime-covers/deathnote.jpg",
-    rating: 9,
-    duration: 37
-  },
-  {
     id: "csm",
     title: "Chainsawman",
     cover: "/image/anime-covers/csm.jpg",
     rating: 10,
+    duration: 12
+  },
+  {
+    id: "dandadan",
+    title: "Dandadan",
+    cover: "/image/anime-covers/ddd.png",
+    rating: 9,
     duration: 12
   },
   {
@@ -159,6 +159,13 @@ export const animeRankingData: AnimeItem[] = [
     cover: "/image/anime-covers/nhk.jpg",
     rating: 7,
     duration: 24
+  },
+  {
+    id: "yaiapo",
+    title: "You and I Are Polar Opposites",
+    cover: "/image/anime-covers/you_and_i_are_polar_opposites_teaser_art.jpg",
+    rating: 7,
+    duration: 12
   },
   {
     id: "flowers",

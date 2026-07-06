@@ -9,41 +9,41 @@ const projects: Project[] = [
   {
     id: "building-classification",
     to: "/projects/building-classification",
-    image: "image/project-thumbnail/Picture3.png",
-    title: "CSU building classification",
-    description: "CSU's 1st Machine learning competition winning submission",
-    attributes: ["Python", "Resnet50", "Machine Learning"]
+    image: "/image/project-thumbnail/Picture3.png",
+    title: "CSU Building Classification",
+    description: "Winning submission for CSU's first Machine Learning competition",
+    attributes: ["Python", "PyTorch", "ResNet50"]
   },
   {
     id: "web-scraper",
     to: "/projects/web-scraper",
-    image: "image/project-thumbnail/graph.png",
-    title: "Web Scraper W/. Github Actions",
-    description: "Game data web scraper with automated data collection and visualization",
-    attributes: ["Python", "BeautifulSoup", "Github Actions"]
+    image: "/image/project-thumbnail/graph.png",
+    title: "Web Scraper with GitHub Actions",
+    description: "Automated game-stats scraper with scheduled data collection and charts",
+    attributes: ["Python", "BeautifulSoup", "GitHub Actions"]
   },
   {
     id: "autonomous-rover",
     to: "/projects/autonomous-rover",
-    image: "image/project-thumbnail/rover-desk.jpg",
+    image: "/image/project-thumbnail/rover-desk.jpg",
     title: "Autonomous Rover",
-    description: "Internet controlled rover with autonomous GPS capabilities",
+    description: "GPS-guided, internet-controlled rover on Arduino and Raspberry Pi",
     attributes: ["C++", "Arduino", "Flask"]
   },
   {
     id: "static-portfolio-website",
     to: "/projects/static-portfolio-website",
-    image: "image/project-thumbnail/javascript.png",
+    image: "/image/project-thumbnail/javascript.png",
     title: "Static Portfolio Website",
-    description: "Github Pages hosted portfolio website",
+    description: "The original hand-built portfolio hosted on GitHub Pages",
     attributes: ["HTML", "CSS", "JavaScript"]
   },
   {
     id: "consumer-producer-problem",
     to: "/projects/consumer-producer-problem",
-    image: "image/project-thumbnail/consumer.png",
-    title: "Consumer Producer Problem",
-    description: "The consumer producer problem implemented in Java",
+    image: "/image/project-thumbnail/consumer.png",
+    title: "Producer-Consumer Problem",
+    description: "Bounded-buffer concurrency solved with Java threads",
     attributes: ["Java", "Threads", "Concurrency"]
   }
 ];
@@ -51,10 +51,20 @@ const projects: Project[] = [
 export default function Projects(): ReactElement {
   return (
     <div className="Project-container">
-      <Header subtitle="Projects"/>
+      <Header subtitle="Projects" />
       <div className="projects-content">
-        <p>Coming Soon...</p>
-        <img src="/image/placeholders/jackhanmer-construction-worker.gif" alt="Coming Soon" />
+        <div className="projects-grid">
+          {projects.map((project) => (
+            <ProjectTile
+              key={project.id}
+              to={project.to}
+              image={project.image}
+              title={project.title}
+              description={project.description}
+              attributes={project.attributes}
+            />
+          ))}
+        </div>
       </div>
       <Footer />
     </div>
