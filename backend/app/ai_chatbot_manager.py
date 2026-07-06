@@ -43,6 +43,7 @@ class BedrockChatbotManager:
                 config=config
             )
             logger.info("Bedrock client initialized successfully with extended timeouts")
+            logger.info(f"Bedrock config -> region={self.region} agent_id={self.agent_id} agent_alias_id={self.agent_alias_id}")
         except Exception as e:
             logger.error(f"Failed to create Bedrock client: {e}")
             raise
@@ -107,6 +108,15 @@ class BedrockChatbotManager:
                     elif 'returnControl' in event:
                         logger.debug(f"Received return control event")
                         
+            except ClientError as stream_client_err:
+                error_code = stream_client_err.response.get('Error', {}).get('Code', 'Unknown')
+                error_message = stream_client_err.response.get('Error', {}).get('Message', str(stream_client_err))
+                logger.error(f"AWS Error during stream - Code: {error_code}, Message: {error_message} (agent={self.agent_id}, alias={self.agent_alias_id}, region={self.region})")
+                return {
+                    "success": False,
+                    "error": f"AWS Error ({error_code}): {error_message}",
+                    "response": f"Bedrock returned {error_code}. See backend logs for details."
+                }
             except Exception as stream_err:
                 logger.error(f"Error processing response stream after {chunk_count} chunks: {stream_err}")
                 if agent_response:

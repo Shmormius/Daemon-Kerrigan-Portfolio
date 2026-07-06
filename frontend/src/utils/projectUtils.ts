@@ -13,7 +13,7 @@ export function getFeaturedProjects(count: number = 3): CarouselItem[] {
   
   return selectedProjects.map(project => ({
     title: project.title,
-    image: project.heroImage || 'image/placeholders/dove1.jpg', 
+    image: project.heroImage || '/image/placeholders/dove1.jpg', 
     link: `/projects/${project.id}`
   }));
 }
@@ -29,7 +29,7 @@ export function getRandomFeaturedProjects(count: number = 3): CarouselItem[] {
   if (allProjects.length <= count) {
     return allProjects.map(project => ({
       title: project.title,
-      image: project.heroImage || 'image/placeholders/dove1.jpg',
+      image: project.heroImage || '/image/placeholders/dove1.jpg',
       link: `/projects/${project.id}`
     }));
   }
@@ -39,7 +39,7 @@ export function getRandomFeaturedProjects(count: number = 3): CarouselItem[] {
   
   return selectedProjects.map(project => ({
     title: project.title,
-    image: project.heroImage || 'image/placeholders/dove1.jpg',
+    image: project.heroImage || '/image/placeholders/dove1.jpg',
     link: `/projects/${project.id}`
   }));
 }
